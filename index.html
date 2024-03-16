@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login & Signup Form</title>
+  <link rel="stylesheet" href="main.css" />
+  <style>
+    /* Add your CSS styles here */
+    /* Ensure the CSS provided in your previous message is included here */
+  </style>
+</head>
+<body>
+  <section class="wrapper">
+    <div class="form signup">
+      <header>Signup</header>
+      <form action="#">
+        <input type="text" placeholder="Full name" id="name" required />
+        <input type="text" placeholder="Email address" id="email" required />
+        <input type="password" placeholder="Password" id="password" required />
+        <div class="checkbox">
+          <input type="checkbox" id="signupCheck" />
+          <label for="signupCheck">I accept all terms & conditions</label>
+        </div>
+        <input type="submit" value="Signup" id="signupsubmit"/>
+      </form>
+    </div>
+
+    <div class="form login">
+      <header>Login</header>
+      <form action="#">
+        <input type="text" placeholder="Email address" id="loginemail" required />
+        <input type="password" placeholder="Password" id="loginpassword" required />
+        <a href="#">Forgot password?</a>
+        <input type="submit" value="Login" id="submit"/>
+      </form>
+    </div>
+  </section>
+
+  <!-- Firebase scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js"></script>
+  <script>
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDT6729q-UWHTc-3xiDSfOdYnAn-HNvQE8",
+      authDomain: "dtiproject-63bb2.firebaseapp.com",
+      projectId: "dtiproject-63bb2",
+      storageBucket: "dtiproject-63bb2.appspot.com",
+      messagingSenderId: "523316743776",
+      appId: "1:523316743776:web:f1bce7a8f9921986b2bd05",
+      measurementId: "G-MJ5J4Q31K1"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Get a reference to the Firebase database service
+    const db = firebase.database();
+
+    // Get a reference to the Firebase authentication service
+    const auth = firebase.auth();
+
+    // JavaScript code for the sliding animation
+    const wrapper = document.querySelector(".wrapper");
+    const signupHeader = document.querySelector(".signup header");
+    const loginHeader = document.querySelector(".login header");
+
+    loginHeader.addEventListener("click", () => {
+      wrapper.classList.add("active");
+    });
+    signupHeader.addEventListener("click", () => {
+      wrapper.classList.remove("active");
+    });
+  </script>
+</body>
+</html>
