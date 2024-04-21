@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillGate</title>
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .schedule-item {
+            margin-bottom: 20px;
+        }
+        .schedule-item p {
+            margin-bottom: 10px;
+        }
+        .schedule-item button {
+            background-color: #0146a4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Schedule</h1>
+        <div class="schedule-item" id="scheduleItem">
+            <!-- Candidate's name will be displayed here -->
+            <p><strong>Candidate Name:</strong> <span id="candidateName"></span></p>
+            <!-- Clock and calendar menus will be added here -->
+            <p><strong>Meeting Time:</strong> <input type="time" id="meetingTime"> <input type="date" id="meetingDate"></p>
+            <!-- Schedule button -->
+            <button id="scheduleButton">Schedule Meeting</button>
+        </div>
+    </div>
+
+    <script>
+        // Retrieve URL parameters
+        var urlParams = new URLSearchParams(window.location.search);
+        var companyName = urlParams.get('companyName');
+        var specialization = urlParams.get('specialization');
+        var pricePerSession = urlParams.get('pricePerSession');
+        var sessions = urlParams.get('sessions');
+
+        // Display candidate information
+        var candidateNameSpan = document.getElementById('candidateName');
+        candidateNameSpan.textContent = companyName;
+
+        // Schedule button functionality
+        document.getElementById('scheduleButton').addEventListener('click', function() {
+            // Get meeting time and date
+            var meetingTime = document.getElementById('meetingTime').value;
+            var meetingDate = document.getElementById('meetingDate').value;
+
+            // Construct the meeting message
+            var meetingMessage = `Your meeting has been scheduled with ${companyName} on ${meetingDate} at ${meetingTime}.`;
+
+            // Display the meeting message
+            alert(meetingMessage);
+        });
+    </script>
+</body>
+</html>

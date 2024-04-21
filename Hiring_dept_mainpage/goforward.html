@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceed</title>
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .company-name {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .proceed-button {
+            background-color: #0146a4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .proceed-button:hover {
+            background-color: #013779;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Proceed</h1>
+        <!-- Display the company name -->
+        <div class="company-name" id="companyName"></div>
+        <!-- Button to proceed -->
+        <button class="proceed-button" id="proceedButton">Proceed</button>
+    </div>
+
+    <script>
+        // Retrieve URL parameters
+        var urlParams = new URLSearchParams(window.location.search);
+        var companyName = urlParams.get('companyName');
+
+        // Display the company name
+        var companyNameDiv = document.getElementById('companyName');
+        companyNameDiv.textContent = companyName;
+
+        // Proceed button functionality
+        document.getElementById('proceedButton').addEventListener('click', function() {
+            // Add your code to proceed here
+            alert('Proceed button clicked');
+        });
+    </script>
+</body>
+</html>
