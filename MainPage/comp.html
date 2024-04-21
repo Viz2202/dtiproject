@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillGate</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <div id="companyInfo">
+        <!-- Company information will be displayed here -->
+    </div>
+
+    <!-- Button for applying -->
+    <button id="applyButton">Apply</button>
+
+    <script>
+        // Retrieve URL parameters
+        var urlParams = new URLSearchParams(window.location.search);
+        var companyName = urlParams.get('companyName');
+        var specialization = urlParams.get('specialization');
+        var pricePerSession = urlParams.get('pricePerSession');
+        var sessions = urlParams.get('sessions');
+
+        // Display company information
+        var companyInfoDiv = document.getElementById('companyInfo');
+        companyInfoDiv.innerHTML = `
+            <p>Company Name: ${companyName}</p>
+            <p>Specialization: ${specialization}</p>
+            <p>Price per Session: ${pricePerSession}</p>
+            <p>Sessions: ${sessions}</p>
+        `;
+
+        // Apply button functionality
+        document.getElementById('applyButton').addEventListener('click', function() {
+            // Add your code for applying here
+            alert('You have applied for the company');
+            // Redirect to another page
+            window.location.href = './inter.html';
+        });
+    </script>
+</body>
+</html>

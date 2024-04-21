@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillGate</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(42, 42, 42);
+        }
+        /* Header styles */
+        header {
+            background-color: #020953;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between; /* Align items horizontally */
+            align-items: center; /* Align items vertically */
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 250px; /* Adjust the width of the input field */
+        }
+
+        input[type="submit"] {
+            background-color: #0146a4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px; /* Add margin between search bar and button */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0146a4;
+        }
+
+        /* Button container styles */
+        .button-container {
+            display: flex;
+            flex-direction: column; /* Arrange buttons vertically */
+            align-items: center; /* Align buttons horizontally */
+            margin-top: 20px;
+        }
+
+        /* Button styles */
+        .button {
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #000;
+            padding: 15px 25px; /* Adjust padding */
+            margin: 5px 0; /* Adjust margin */
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: block; /* Make button a block-level element */
+            width: calc(100% - 40px); /* Adjust width */
+        }
+
+        .button:hover {
+            background-color: #f2f2f2;
+        }
+
+        /* Introductory text styles */
+        .intro {
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+            font-size: 20px; /* Increase font size */
+            font-weight: bold; /* Make text bold */
+        }
+
+        .intro p {
+            font-weight: bold;
+            font-size: 48px;
+        }
+        .intro{
+            background-color: rgb(42, 42, 42);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">SkillGate!</div>
+        <div class="search-container">
+            <form id="searchForm">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+    </header>
+
+    <!-- Introductory text -->
+    <div class="intro">
+        <p><strong>Welcome to SkillGate!</strong> Explore the available job opportunities and specializations below:</p>
+    </div>
+
+    <!-- Button container -->
+    <div class="button-container" id="buttonContainer">
+        <!-- Buttons with company names, hiring information, specialization, price, and sessions -->
+        <a href="#" class="button" data-company="Company A" data-specialization="Frontend Web Development" data-price="2000" data-sessions="10">
+            <p>Company A</p>
+            <p>Hiring</p>
+            <p>Specialization: Frontend Web Development</p>
+        </a>
+        <a href="#" class="button" data-company="Company B" data-specialization="Backend Web Development" data-price="1500" data-sessions="7">
+            <p>Company B</p>
+            <p>Hiring</p>
+            <p>Specialization: Backend Web Development</p>
+        </a>
+        <a href="#" class="button" data-company="Company C" data-specialization="Full Stack Web Development" data-price="3000" data-sessions="8">
+            <p>Company C</p>
+            <p>Hiring</p>
+            <p>Specialization: Full Stack Web Development</p>
+        </a>
+        <a href="#" class="button" data-company="Company D" data-specialization="Mobile App Development" data-price="2500" data-sessions="6">
+            <p>Company D</p>
+            <p>Hiring</p>
+            <p>Specialization: Mobile App Development</p>
+        </a>
+        <a href="#" class="button" data-company="Company E" data-specialization="Data Science" data-price="4000" data-sessions="9">
+            <p>Company E</p>
+            <p>Hiring</p>
+            <p>Specialization: Data Science</p>
+        </a>
+        <a href="#" class="button" data-company="Company F" data-specialization=" Artificial Intelligence" data-price="3500" data-sessions="11">
+            <p>Company F</p>
+            <p>Hiring</p>
+            <p>Specialization: Artificial Intelligence</p>
+        </a>
+        <a href="#" class="button" data-company="Company G" data-specialization="Machine Learning" data-price="4500" data-sessions="13">
+            <p>Company G</p>
+            <p>Hiring</p>
+            <p>Specialization: Machine Learning</p>
+        </a>
+        <a href="#" class="button" data-company="Company H" data-specialization="Cybersecurity" data-price="3000" data-sessions="8">
+            <p>Company H</p>
+            <p>Hiring</p>
+            <p>Specialization: Cybersecurity</p>
+        </a>
+        <a href="#" class="button" data-company="Company I" data-specialization="Cloud Computing" data-price="2000" data-sessions="12">
+            <p>Company I</p>
+            <p>Hiring</p>
+            <p>Specialization: Cloud Computing</p>
+        </a>
+        <a href="#" class="button" data-company="Company J" data-specialization="Software Engineering" data-price="5000" data-sessions="5">
+            <p>Company J</p>
+            <p>Hiring</p>
+            <p>Specialization: Software Engineering</p>
+        </a>
+
+        <!-- Add more buttons for other companies -->
+    </div>
+
+    <script>
+        // Function to handle form submission
+        document.getElementById("searchForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission behavior
+            
+            // Get the search input value
+            var searchValue = document.getElementById("searchInput").value.toLowerCase();
+            
+            // Get all buttons
+            var buttons = document.getElementsByClassName("button");
+            
+            // Loop through buttons and hide/show based on search value
+            for (var i = 0; i < buttons.length; i++) {
+                var specialization = buttons[i].querySelector("p:nth-child(3)").innerText.toLowerCase();
+                
+                // If specialization contains the search value, show the button, otherwise hide it
+                if (specialization.includes(searchValue)) {
+                    buttons[i].style.display = "block";
+                } else {
+                    buttons[i].style.display = "none";
+                }
+            }
+
+            // Toggle visibility of introductory text based on search
+            var introText = document.querySelector(".intro");
+            introText.style.display = searchValue ? "none" : "block";
+        });
+
+        // Function to handle clearing the search input
+        document.getElementById("searchInput").addEventListener("input", function(event) {
+            var searchValue = event.target.value.trim().toLowerCase();
+
+            // Toggle visibility of introductory text based on search
+            var introText = document.querySelector(".intro");
+            introText.style.display = searchValue ? "none" : "block";
+        });
+
+        // Function to handle button clicks
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('click', function(event) {
+                // Prevent the default link behavior
+                event.preventDefault();
+
+                // Extract company information
+                var companyName = this.getAttribute('data-company');
+                var specialization = this.getAttribute('data-specialization');
+                var pricePerSession = this.getAttribute('data-price');
+                var sessions = this.getAttribute('data-sessions');
+
+                // Encode the company information as URL parameters
+                var params = new URLSearchParams();
+                params.append('companyName', companyName);
+                params.append('specialization', specialization);
+                params.append('pricePerSession', pricePerSession);
+                params.append('sessions', sessions);
+
+                // Navigate to the new HTML page with URL parameters
+                window.location.href = 'comp.html?' + params.toString();
+            });
+        });
+    </script>
+</body>
+</html>
