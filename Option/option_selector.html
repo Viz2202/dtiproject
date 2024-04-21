@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interview Options</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0faff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sidebar {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 2%;
+  }
+  .bar {
+    margin: 10px 0;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    background-color: #ddd;
+  }
+  .bar.selected {
+    background-color: #cce5ff;
+    border-color: #007bff;
+  }
+  .button-container {
+    margin-top: auto;
+  }
+  .button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    pointer-events: none;
+  }
+  .button.enabled {
+    pointer-events: auto;
+    background-color: green;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="sidebar">
+    <h2>Who do you want to use the platform as?</h2>
+    <div class="bar" data-content="content1">
+      <p><strong>I am a tech professional and want to become an interviewer</strong></p>
+      <p>I want to take interviews and earn money</p>
+    </div>
+    <div class="bar" data-content="content2">
+      <p><strong>I am an organisation and want to outsource my interviews</strong></p>
+      <p>As an organisation I want to explore your hiring solutions and get my candidates interviewed</p>
+    </div>
+    <div class="bar" data-content="content3">
+      <p><strong>I am a candidate and want to test my skills through mock interviews</strong></p>
+      <p>I want real interview experience with industry experts</p>
+    </div>
+  </div>
+  <div class="button-container">
+    <button class="button" disabled>Select an Option</button>
+  </div>
+</div>
+
+<script>
+const bars = document.querySelectorAll('.bar');
+const button = document.querySelector('.button');
+
+const buttonTexts = {
+  content1: "Proceed as a tech professional",
+  content2: "Proceed as an organisation",
+  content3: "Proceed as a candidate"
+};
+
+bars.forEach(bar => {
+  bar.addEventListener('click', function() {
+    const contentId = this.getAttribute('data-content');
+    if (this.classList.contains('selected')) {
+      this.classList.remove('selected');
+      button.textContent = "Select an Option";
+      button.classList.remove('enabled');
+      button.setAttribute('disabled', 'true');
+    } else {
+      bars.forEach(bar => {
+        bar.classList.remove('selected');
+      });
+      this.classList.add('selected');
+      button.textContent = buttonTexts[contentId];
+      button.classList.add('enabled');
+      button.removeAttribute('disabled');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
