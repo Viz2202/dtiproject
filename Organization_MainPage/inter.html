@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillGate</title>
+    <style>
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../MainPage/consultancy-bg.png'); /* Relative path to background image */
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Set body height to full viewport height */
+    display: flex;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    flex-direction: column; /* Stack elements vertically */
+    position: relative; /* Position relative for absolute positioning */
+}
+
+/* Header styles */
+header {
+    color: white;
+    text-align: center;
+    border-radius: 5px; /* Rounded corners */
+    position: absolute; /* Position absolute for custom positioning */
+    top: 10px; /* 10px from the top */
+    left: 10px; /* 10px from the left */
+}
+
+/* Main styles */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.main-text {
+    font-family: "Mukta", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 78px; /* Adjust the font size as needed */
+    margin-bottom: 0px; /* Add some spacing below the text */
+    margin-top: 100px;
+    color: white;
+}
+
+.main-text p {
+    margin-bottom: 10px; /* Adjust the margin between paragraphs */
+}
+
+.about-us {
+    color: white;
+    text-align: center;
+    margin-bottom: 50px; /* Increase space between About Us and SkillGate */
+}
+
+.buttons-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 50px; /* Distance from the top */
+    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black background */
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 0; /* Ensure box is below the main text */
+}
+.buttons-box p{
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+}
+.buttons a {
+    text-decoration: none; /* Remove default link underline */
+}
+
+.buttons button {
+    background-color: rgba(255, 255, 255, 0.3); /* Transparent white background */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    transform: scale(1.1); /* Added scale transform on hover */
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Wrap buttons to the next line if necessary */
+    margin-top: 10px; /* Add margin between the "Our Services" text and buttons */
+    margin-bottom: 10px; /* Add margin between the buttons and the bottom edge */
+}
+.Head{
+    display:flex;
+    align-items: baseline;
+}
+.Head a{
+    color: #fff;
+    margin-right: 15px;
+    font-size: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.Head h1{
+    margin-right: 15px;
+    font-size: 40px;
+}
+.Head a:hover {
+    transform: scale(1.1); /* Change the color to red when hovering over the link */
+}
+
+    </style>    
+</head>
+<body>
+    <header class="Head">
+        <h1>SkillGate</h1>
+        <a href="./aboutus.html">About us</a>
+        <a href="./account.html">Profile</a>
+    </header>
+    <main>
+        <div class="main-text">
+            <p>The Future belongs to the Competent.</p>
+            <p>Get Good. Get Better.</p>
+            <p>Be the Best.</p>
+        </div>
+        <div class="buttons-box">
+            <p>Our Services</p>
+            <div class="buttons">
+                <a href="specialization.html"><button class="schedule-btn">Schedule Interview</button></a>
+                <a href="./interviewers.html"><button class="history-btn">Find Interviewers</button></a>
+                <a href="cv.html"><button class="score-btn">Check CVs</button></a>
+                <a href="../Payment/payment.html"><button class="score-btn">Payment</button></a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

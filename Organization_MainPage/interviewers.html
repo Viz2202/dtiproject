@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillGate</title>
+    <style>
+        /* Reset default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Top bar styles */
+        .top-bar {
+            background-color: #020953; /* Black background color */
+            color: #fff; /* Text color */
+            padding: 25px 20px; /* Padding for the top bar */
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Align items with space between */
+            align-items: center; /* Align items vertically */
+            width: 100%; /* Set the width to 100% */
+        }
+
+        /* Logo styles */
+        .logo {
+            font-family: Arial,sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Search bar styles */
+        .search-bar {
+            flex: 1; /* Take remaining space */
+            margin-left: 20px; /* Add space between logo and search bar */
+        }
+
+        .search-input {
+            width: 100%; /* Full width */
+            padding: 10px; /* Padding for input */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Add border radius */
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo">SkillGate</div>
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search...">
+        </div>
+    </div>
+</body>
+</html>
